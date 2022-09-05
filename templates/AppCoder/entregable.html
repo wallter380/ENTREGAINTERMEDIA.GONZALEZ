@@ -1,0 +1,14 @@
+{% extends 'index.html' %}
+
+{% block title %}
+    Entregable
+{% endblock %}
+
+{% block inicio %}
+    Un entregable fue creado satisfactoriamente
+<br>
+<li>Nombre {{ entregable.nombre }} </li>
+<br>
+<li> Fecha {{ entregable.fecha_de_entrega }} </li>
+
+{%  endblock%}

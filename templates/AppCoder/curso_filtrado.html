@@ -1,0 +1,17 @@
+{% extends 'index.html' %}
+
+{% block title %}
+    Curso Filtrado
+{% endblock %}
+
+{% block inicio %}
+
+    {% for curso in cursos %}
+
+        El nombre del curso es {{curso.nombre}} con la camada {{curso.camada}}
+
+        <br>
+
+    {% endfor %}
+
+{% endblock %}

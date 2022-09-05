@@ -1,0 +1,17 @@
+{% extends 'index.html' %}
+
+{% block title %}
+    Estudiante Filtrado
+{% endblock %}
+
+{% block inicio %}
+
+    {% for estudiante in estudiantes %}
+
+        El nombre del estudiante es {{estudiante.nombre}} {{estudiante.apellido}}
+
+        <br>
+
+    {% endfor %}
+
+{% endblock %}

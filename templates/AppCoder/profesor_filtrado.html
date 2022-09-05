@@ -1,0 +1,17 @@
+{% extends 'index.html' %}
+
+{% block title %}
+    Profesor Filtrado
+{% endblock %}
+
+{% block inicio %}
+
+    {% for profesor in profesores %}
+
+        El nombre del profesor es {{profesor.nombre}} {{profesor.apellido}}
+
+        <br>
+
+    {% endfor %}
+
+{% endblock %}

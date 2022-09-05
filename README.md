@@ -1,0 +1,3 @@
+En este proyecto, lo hice con la compañera Yasmin Gisele Diaz, ella se encargo de la parte del formulario de profesor, yo me encargue de la parte de los formularios del estudiante y de los cursos. En los url.py declaramos el formulario de cada modelo, asimismo tambien declaramos la busqueda en la base de datos, datos de la camada/estudiantes/profesores.
+En este proyecto nos dirijimos como un organismo que da clase de programacion y que esta en la busqueda de nuevos profesores constantemente.
+En la parte de models.py declaramos 4 clases la cual usamos para este entregable 3 de los 4 usamos para generar los formularios y la busqueda en la base de datos.
