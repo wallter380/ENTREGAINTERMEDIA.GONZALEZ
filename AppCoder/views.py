@@ -1,6 +1,7 @@
 import datetime
 import django
 import django.db.utils
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from AppCoder.forms import *
 from AppCoder.models import *
@@ -175,6 +176,7 @@ def busqueda_camada_post(request):
 
     return render(request, 'Appcoder/curso_filtrado.html', contexto)
 
+@login_required
 def busqueda_camada(request):
 
     contexto = {
@@ -271,6 +273,7 @@ def busqueda_estudiante_post(request):
 
     return render(request, 'Appcoder/estudiante_filtrado.html', contexto)
 
+@login_required
 def busqueda_estudiante(request):
 
     contexto = {
@@ -278,6 +281,7 @@ def busqueda_estudiante(request):
     }
 
     return render(request, 'AppCoder/busqueda_estudiante.html', contexto)
+
 
 def profesor_formulario(request):
 
@@ -322,6 +326,7 @@ def busqueda_profesor_post(request):
 
     return render(request, 'Appcoder/profesor_filtrado.html', contexto)
 
+@login_required
 def busqueda_profesor(request):
 
     contexto = {

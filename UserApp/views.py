@@ -66,8 +66,6 @@ def register(request):
 
             return render(request, 'User/user_no_registrado.html')
 
-        return redirect('AppCoderInicio')
-
     contexto = {
 
         'form': UserCreationForm(),
