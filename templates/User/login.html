@@ -1,7 +1,7 @@
 {% extends 'index.html' %}
 
 {% block title %}
-    Curso Formulario
+    {{ nombre_form }}
 {% endblock %}
 
 {% block inicio %}
@@ -11,7 +11,7 @@
 
         {{ form.as_p }}
 
-        <input type="submit" value="Enviar">
+        <input type="submit" value= "{{ nombre_form }}">
 
     </form>
 

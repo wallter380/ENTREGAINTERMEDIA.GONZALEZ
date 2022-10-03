@@ -7,11 +7,11 @@
 {% block inicio %}
 
     {% for profesor in profesores %}
-
-        El nombre del profesor es {{profesor.nombre}} {{profesor.apellido}}
-
+        El nombre del profesor es {{profesor.nombre}} {{profesor.apellido}} {{profesor.email}}
+        <a href="{% url 'AppCoderEliminarProfesor' profesor.nombre profesor.apellido profesor.email %}">-x-</a>
+        <a href="{% url 'AppCoderEditarProfesor' profesor.nombre profesor.apellido profesor.email %}"> Editar </a>
         <br>
-
     {% endfor %}
+
 
 {% endblock %}
