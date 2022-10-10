@@ -14,11 +14,13 @@ def curso_no_editar(request):
 
 def estudiante_no_editar(request):
 
-    return render(request, 'estudiante_no_editar.html')
+    return render(request, 'AppCoder/estudiante_no_editar.html')
 
 def profesor_no_editar(request):
 
-    return render(request, 'profesor_no_editar.html')
+    return render(request, 'AppCoder/profesor_no_editar.html')
+
+@login_required
 def editar_curso(request, camada):
 
     curso_editar = Curso.objects.get(camada=camada)
@@ -38,6 +40,8 @@ def editar_curso(request, camada):
 
                 curso_editar.save()
 
+                return redirect('AppCoderCursoEditado')
+
             except django.db.utils.IntegrityError:
 
                 return redirect('AppCoderCursoNoEditar')
@@ -55,6 +59,7 @@ def editar_curso(request, camada):
 
     return render(request, 'Appcoder/curso_formulario.html', contexto)
 
+@login_required
 def editar_estudiante(request, nombre, apellido, email):
 
     estudiante_editar = Estudiantes.objects.get(nombre=nombre, apellido=apellido, email=email)
@@ -76,9 +81,11 @@ def editar_estudiante(request, nombre, apellido, email):
 
                 estudiante_editar.save()
 
+                return redirect('AppCoderEstudianteEditado')
+
             except django.db.utils.IntegrityError:
 
-                return redirect('AppCoderEstudianteFormulario')
+                return redirect('AppCoderEstudianteNoEditar')
 
     contexto = {
 
@@ -94,6 +101,7 @@ def editar_estudiante(request, nombre, apellido, email):
 
     return render(request, 'Appcoder/estudiante_formulario.html', contexto)
 
+@login_required
 def editar_profesor(request, nombre, apellido, email):
 
     profesor_editar = Profesor.objects.get(nombre=nombre, apellido=apellido, email=email)
@@ -115,11 +123,11 @@ def editar_profesor(request, nombre, apellido, email):
 
                 profesor_editar.save()
 
+                return redirect('AppCoderProfesorEditado')
+
             except django.db.utils.IntegrityError:
 
-                messages.error(request, "La modificacion fallo porque se repite dato.")
-
-            return redirect('AppCoderProfesorFormulario')
+                return redirect('AppCoderProfesorNoEditar')
 
     contexto = {
 
@@ -170,7 +178,7 @@ def busqueda_camada_post(request):
 
     contexto = {
 
-        'cursos' : cursos
+        'cursos': cursos
 
     }
 
@@ -340,6 +348,18 @@ def busqueda_profesor(request):
     }
 
     return render(request, 'AppCoder/busqueda_profesor.html', contexto)
+
+def curso_editado(request):
+
+    return render(request, 'AppCoder/curso_editado.html')
+
+def estudiante_editado(request):
+
+    return render(request, 'AppCoder/estudiante_editado.html')
+
+def profesor_editado(request):
+
+    return render(request, 'AppCoder/profesor_editado.html')
 
 
 
