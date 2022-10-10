@@ -23,5 +23,6 @@ urlpatterns = [
     path('editar_profesor/<str:nombre> <str:apellido> <str:email>', editar_profesor, name='AppCoderEditarProfesor'),
     path('curso_no_editar/', curso_no_editar, name='AppCoderCursoNoEditar'),
     path('estudiante_no_editar/', estudiante_no_editar, name='AppCoderEstudianteNoEditar'),
-    path('profesor_no_editar/', profesor_no_editar, name='AppCoderProfesorNoEditar')
+    path('profesor_no_editar/', profesor_no_editar, name='AppCoderProfesorNoEditar'),
+    path('about/', about, name='AppCoderAbout')
 ]

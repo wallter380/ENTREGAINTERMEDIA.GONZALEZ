@@ -176,7 +176,6 @@ def busqueda_camada_post(request):
 
     return render(request, 'Appcoder/curso_filtrado.html', contexto)
 
-@login_required
 def busqueda_camada(request):
 
     contexto = {
@@ -185,6 +184,7 @@ def busqueda_camada(request):
 
     return render(request, 'AppCoder/busqueda_camada.html', contexto)
 
+@login_required
 def curso_formulario(request):
 
     if request.method == 'POST':
@@ -228,6 +228,12 @@ def profesor_eliminado(request):
 def inicio(request):
 
     return render(request, 'index.html')
+
+def about(request):
+
+    return render(request, 'base/about.html')
+
+@login_required
 
 def estudiante_formulario(request):
 
@@ -273,7 +279,7 @@ def busqueda_estudiante_post(request):
 
     return render(request, 'Appcoder/estudiante_filtrado.html', contexto)
 
-@login_required
+
 def busqueda_estudiante(request):
 
     contexto = {
@@ -282,7 +288,7 @@ def busqueda_estudiante(request):
 
     return render(request, 'AppCoder/busqueda_estudiante.html', contexto)
 
-
+@login_required
 def profesor_formulario(request):
 
     if request.method == 'POST':
@@ -326,7 +332,7 @@ def busqueda_profesor_post(request):
 
     return render(request, 'Appcoder/profesor_filtrado.html', contexto)
 
-@login_required
+
 def busqueda_profesor(request):
 
     contexto = {
